@@ -1,0 +1,43 @@
+.navSection{
+    background: linear-gradient(-120deg,transparent,rgba(0,0,0,0.5));
+    padding: 20px;
+}
+
+.scrollNav{
+    padding: 15px;
+}
+
+.navSection .navicon{
+    transition: all .4s linear;
+}
+
+.navSection .navRight:hover .navicon{
+    transform: translateX(5px);
+}
+
+.banner{
+    min-height: 100vh;
+    background: url(../photos/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+
+.banner .bannerContent p{
+    animation: fadeIn 1s linear;
+}
+.banner .bannerContent p:nth-child(2){
+    animation-delay: .8s;
+    animation-fill-mode: backwards;
+}
+
+@keyframes fadeIn {
+    from {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
