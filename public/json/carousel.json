@@ -1,0 +1,27 @@
+[
+    {
+        "url" : "http://127.0.0.1:8000/photos/1.jpg",
+        "alt" : "photo 1",
+        "content" : "You got a promotion this week!!!"
+    },
+    {
+        "url" : "http://127.0.0.1:8000/photos/2.jpg",
+        "alt" : "photo 2",
+        "content" : "You got a promotion next week!!!"
+    },
+    {
+        "url" : "http://127.0.0.1:8000/photos/3.jpg",
+        "alt" : "photo 3",
+        "content" : "You got a promotion this month!!!"
+    },
+    {
+        "url" : "http://127.0.0.1:8000/photos/5.jpg",
+        "alt" : "photo 4",
+        "content" : "You got a promotion next month!!!"
+    },
+    {
+        "url" : "http://127.0.0.1:8000/photos/6.jpg",
+        "alt" : "photo 5",
+        "content" : "You got a promotion this year!!!"
+    }
+]

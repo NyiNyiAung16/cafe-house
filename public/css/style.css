@@ -1,10 +1,24 @@
+@font-face {
+    font-family:  'Arima';
+    src: url(../Arima/static/Arima-Bold.ttf);
+}
+
+body{
+    font-family: 'Arima';
+}
+
+*,*::before,*::after{
+    box-sizing: border-box;
+}
+
 .navSection{
     background: linear-gradient(-120deg,transparent,rgba(0,0,0,0.5));
     padding: 20px;
+    transition: all .6s;
 }
 
 .scrollNav{
-    padding: 15px;
+    padding: 15px 20px;
 }
 
 .navSection .navicon{
@@ -21,6 +35,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
+    background-attachment: fixed;
 }
 
 .banner .bannerContent p{
@@ -41,3 +56,105 @@
         opacity: 1;
     }
 }
+
+/* Start Carousel Style */
+
+.carousel
+{
+    padding: 20px 0;
+    background: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(../photos/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
+}
+
+.carousel .carousel_inner
+{
+    width: 1200px;
+    margin: auto;
+    padding: 20px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.carousel .carousel_inner .carousel_slide{
+    display: flex;
+    align-items: center;
+}
+
+.carousel .carousel_inner .carousel_slide .carousel_item img{
+    border-radius: 3px;
+}
+
+.carousel .carousel_inner .carousel_button{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 5;
+    transform: translateY(50px);
+}
+
+.carousel .carousel_inner .carousel_button button{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    /* background-color: #777; */
+    font-size: 1.2rem;
+    color: #fff;
+    position: absolute;
+    transition: all .7s;
+}
+
+.carousel .carousel_inner .carousel_button .btnleft:hover{
+    background-color: #555;
+    animation: arrowLeft 1s infinite linear;
+}
+
+@keyframes arrowLeft {
+    20%{
+        transform: translateX(-3px);
+    }
+    50%{
+        transform: translateX(-8px);
+    }
+}
+
+.carousel .carousel_inner .carousel_button .btnright:hover{
+    background-color: #555;
+    animation: arrowRight 1s infinite linear;
+}
+
+@keyframes arrowRight {
+    20%{
+        transform: translateX(3px);
+    }
+    50%{
+        transform: translateX(8px);
+    }
+}
+
+.carousel .carousel_inner .carousel_button button:nth-child(2){
+    right: 0;
+}
+
+.carousel .carousel_inner .carousel_button button i {
+    line-height: 40px;
+}
+
+.carousel .carousel_inner .carousel_item
+{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    column-gap: 30px;
+    flex: 1 0 100%;
+}
+
+
+/* Start Carousel Style */
