@@ -1,10 +1,13 @@
 const navbar = document.querySelector('.navSection');
+const coffeeListContainer = document.querySelector('.listContainer');
 
 function handleScroll(){
     if(this.scrollY >= '210'){
         navbar.classList.add('scrollNav')
+        coffeeListContainer.classList.add('scroll')
     }else{
         navbar.classList.remove('scrollNav')
+        coffeeListContainer.classList.remove('scroll')
     }
 }
 
@@ -24,7 +27,7 @@ function moveSlide(){
 
 function handleSlide(direction){
     isMoving = true;
-    carouselSlide.style.transition = `transform 450ms ease-in-out`;
+    carouselSlide.style.transition = `transform .6s ease-in-out`;
     direction !== 'right' ? (slideIndex -= 1) : (slideIndex += 1);
     moveSlide();
 }
@@ -49,7 +52,6 @@ async function fetchData(){
         data.push(data[0]);
         data.unshift(data[data.length - 2]);
         carouselSlide.innerHTML = data.map(processImages).join('');
-        console.log(data)
     })
     .catch((err)=>{
         console.log(err)
@@ -86,4 +88,12 @@ carouselSlide.addEventListener('transitionend',()=>{
 setInterval(()=>{
     if(isMoving) return;
     handleSlide('right');
-},3000)
+},3000);
+
+
+// // Start Coffee Lists Section
+
+// window.addEventListener('scroll',handleScroll);
+
+
+// // End Coffee Lists Section

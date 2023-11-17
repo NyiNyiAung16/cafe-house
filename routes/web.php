@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CoffeeController;
+use App\Http\Middleware\AdminMIddleware;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',function(){
     return view('welcome');
 });
+
+Route::get('/create',function(){
+    return view('create');
+});
+
+Route::post('/addData',[CoffeeController::class,'create']);
