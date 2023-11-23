@@ -26,7 +26,7 @@ body{
 }
 
 .navSection .navRight:hover .navicon{
-    transform: translateX(5px);
+    transform: translateX(3px);
 }
 
 .banner{
@@ -180,7 +180,7 @@ body{
     margin: 12px 0;
 }
 
-.createForm input[type='text']{
+.createForm input{
     width: 100%;
     padding: 6px;
     border: none;
@@ -194,16 +194,16 @@ body{
 /* Start Coffee list Section */
 
 .listContainer.scroll{
-    animation: fadeIn .8s linear;
+    animation: fadeIn 1s linear;
 }
 
 @keyframes fadeIn {
     from{
-        transform: translateY(80px);
+        transform: translateX(-60px);
         opacity: 0;
     }   
     to{
-        transform: translateY(0);
+        transform: translateX(0);
         opacity: 1;
     }
 }
@@ -218,3 +218,11 @@ body{
 
 
 /* End Coffee list Section */
+
+
+
+@media (max-width:475px) {
+    .createForm{
+       width: 300px;
+    }
+}

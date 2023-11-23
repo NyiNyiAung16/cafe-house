@@ -43,4 +43,8 @@ class User extends Authenticatable
         'password' => 'hashed',
         'isAdmin' => 'boolean'
     ];
+
+    public function addToCartsCoffee(){
+       return $this->belongsToMany(Coffee::class);
+    }
 }

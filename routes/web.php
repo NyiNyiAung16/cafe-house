@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\CoffeeController;
 use App\Http\Middleware\AdminMIddleware;
+use App\Http\Middleware\AuthMiddleware;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,8 +22,20 @@ Route::get('/',function(){
     return view('welcome');
 });
 
-Route::get('/create',function(){
-    return view('create');
+
+Route::middleware(AuthMiddleware::class)->group(function(){
+    Route::get('/create',function(){
+        return view('create');
+    });
+    Route::post('/addData',[CoffeeController::class,'create']);
+    Route::post('/logout',[AuthController::class,'logout']);
+    Route::get('/coffee/{coffee}/carts',[CartController::class,'store']);
 });
 
-Route::post('/addData',[CoffeeController::class,'create']);
+
+Route::middleware('guest')->group(function(){
+    Route::get('/register',[AuthController::class,'register']);
+    Route::post('/register/store',[AuthController::class,'registerStore']);
+    Route::get('/login',[AuthController::class,'login'])->name('login');
+    Route::post('/login/store',[AuthController::class,'loginStore']);
+});

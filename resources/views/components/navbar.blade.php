@@ -5,8 +5,16 @@
         <a href="#" class="hover:text-slate-50 duration-150">About</a>
         <a href="#" class="hover:text-slate-50 duration-150">Contact</a>
     </div>
-    <div class="navRight flex gap-2 items-center text-slate-50 hover:text-blue-400 duration-150">
-        <a href="javascript:void(0)" class="text-lg font-medium text-slate-50 hover:text-slate-50 duration-150">Register</a>
-        <i class="navicon fa-solid fa-arrow-right text-lg "></i>
-    </div>
+    @if (!auth()->user())    
+        <div class="navRight flex gap-2 items-center text-slate-50 hover:text-blue-400 duration-150">
+            <a href="/register" class="text-lg font-medium text-slate-50 hover:text-slate-50 duration-150">Register</a>
+            <i class="navicon fa-solid fa-arrow-right text-lg "></i>
+        </div> 
+    @endif
+    @auth
+        <form action="/logout" method="post" class="px-3 text-white">
+            @csrf
+            <button class="hover:text-gray-100 hover:underline duration-150" type="submit">Logout</button>
+        </form>
+    @endauth
 </section>

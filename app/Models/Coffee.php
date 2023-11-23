@@ -15,4 +15,8 @@ class Coffee extends Model
      * @var string
      */
     protected $table = 'coffee';
+
+    public function addToCartsUser(){
+       return $this->belongsToMany(User::class);
+    }
 }
