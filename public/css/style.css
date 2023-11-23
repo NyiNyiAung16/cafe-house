@@ -221,6 +221,50 @@ body{
 
 
 
+/* Subscriber form style */
+
+.subscriberContainer{
+    padding: 20px 10px;
+    background-image: linear-gradient(
+        60deg,
+        rgba(0,0,0,.5),
+        transparent
+    ) ,url(./../photos/subscriberbg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.subscriberForm .form-group{
+    position: relative;
+}
+
+.input{
+    width: 100%;
+    padding:10px 15px;
+    border-radius: 3px;
+    outline: none;
+}
+
+.label{
+    position: absolute;
+    left: 10px;
+    top: -23px;
+    transform: translateY(0);
+    transition: all .5s;
+}
+
+.input:placeholder-shown + .label{
+    opacity: 0;
+}
+
+
+
+
+
+/* media query style */
+
 @media (max-width:475px) {
     .createForm{
        width: 300px;
