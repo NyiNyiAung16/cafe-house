@@ -6,7 +6,7 @@
         <div class="mb-8">
             <p>Americano</p>
             <div class="progress w-full">
-                <div class="progress-bar rounded-sm h-[4px] bg-blue-400 w-[100px]"></div>
+                <div class="progress-bar rounded-sm h-[4px] w-[100px] bg-blue-400"></div>
             </div>
         </div>
         <div class="mb-8">

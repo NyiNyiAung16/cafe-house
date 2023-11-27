@@ -3,6 +3,10 @@
     src: url(../Arima/static/Arima-Bold.ttf);
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     font-family: 'Arima';
 }

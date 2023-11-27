@@ -9,7 +9,7 @@
                 <input type="email" class="input" placeholder="Email">
                 <label for="email" class="label text-yellow-400">Email</label>
             </div>
-            <button class="px-3 py-2 mt-4 bg-gray-700 rounded text-white mx-auto block">Subscribe</button>
+            <button class="px-3 py-2 mt-4 bg-gray-700 hover:bg-gray-900 duration-150 rounded text-white mx-auto block">Subscribe</button>
         </form>
     </div>
 </div>

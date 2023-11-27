@@ -1,4 +1,4 @@
-<div class="banner w-full px-20 py-10"> 
+<div class="banner w-full px-20 py-10" id="home"> 
     <div class="mt-20 bannerContent">
         <p class="text-4xl text-slate-50">What a beautiful day!!! <br>A great day to drink coffee.</p>
         <p class="text-slate-50 mt-10 text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt nostrum iusto facilis, iste voluptas,<br/> saepe ea fugiat, blanditiis nihil ipsum repellendus! Laudantium in<br/> officiis voluptatem, harum obcaecati esse sed.</p>

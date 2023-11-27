@@ -7,7 +7,7 @@ function handleScroll(){
         coffeeListContainer.classList.add('scroll')
     }else{
         navbar.classList.remove('scrollNav')
-        coffeeListContainer.classList.remove('scroll')
+        // coffeeListContainer.classList.remove('scroll')
     }
 }
 

@@ -15,6 +15,6 @@ class CoffeeController extends Controller
         ]);
         $cleanData['image'] = request()->file('image')->store('images');
         Coffee::create($cleanData);
-        return back()->with('flashMessage','Create is successful');
+        return redirect('/')->with('flashMessage','Create Coffee List is successful');
     }
 }

@@ -30,6 +30,8 @@ Route::middleware(AuthMiddleware::class)->group(function(){
     Route::post('/addData',[CoffeeController::class,'create']);
     Route::post('/logout',[AuthController::class,'logout']);
     Route::get('/coffee/{coffee}/carts',[CartController::class,'store']);
+    Route::get('/carts/me',[CartController::class,'show']);
+    Route::get('/carts/{coffee}/destroy',[CartController::class,'destroy']);
 });
 
 
