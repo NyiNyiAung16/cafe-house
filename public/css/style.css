@@ -264,6 +264,43 @@ body{
 }
 
 
+/* Start Profile Style */
+.dropdown-menu{
+    left: 180px;
+}
+
+
+.showdropdown-menu{
+    animation: fadeIn .8s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from{
+        left: 180px;
+        opacity: 0;
+    }
+    to{
+        left: -130px;
+        opacity: 1;
+    }
+}
+
+.hidedropdown-menu{
+    animation: fadeOut .8s ease-in-out forwards;
+}
+
+@keyframes fadeOut {
+    from{
+        left: -130px;
+        opacity: 1;
+    }
+    to{
+        left: 180px;
+        opacity: 0;
+    }
+}
+
+
 
 
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class AuthController extends Controller
 {
@@ -18,7 +19,7 @@ class AuthController extends Controller
     public function registerStore(Request $request){
         $cleanData = $request->validate([
             'name' => 'required',
-            'email' => 'required',
+            'email' => ['required',Rule::unique('users','email')],
             'password' =>['required','confirmed','max:15','min:6'],
         ]);
         $user = User::create($cleanData);
@@ -28,9 +29,9 @@ class AuthController extends Controller
 
     public function loginStore(Request $request){
         $cleanData = $request->validate([
-            'email' => 'required',
+            'email' => ['required',Rule::exists('users','email')],
             'password' =>'required|max:15|min:6'
-        ]);
+        ],['email.exists'=>'Your Credients is not correct.']);
        auth()->attempt($cleanData,true);
        return redirect('/')->with('flashMessage','Login is successful');
     }

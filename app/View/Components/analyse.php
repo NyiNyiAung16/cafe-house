@@ -23,7 +23,7 @@ class analyse extends Component
     public function render(): View|Closure|string
     {
         return view('components.analyse',[
-            'lists' => Coffee::where('count','>',0)->take(5)->get()
+            'lists' => Coffee::where('count','>',0)->latest()->take(5)->get()
         ]);
     }
 }

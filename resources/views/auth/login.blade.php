@@ -2,7 +2,7 @@
 
 <div class="createForm lg:max-w-4xl md:max-w-3xl sm:max-w-xl max-w-lg bg-slate-500 text-white grid grid-cols-12 gap-5 w-full my-10">
     <div class="hidden md:block md:col-span-5 lg:col-span-5">
-        <img src="/photos/6.jpg" alt="">
+        <img src="/photos/1.jpg" alt="loginimg">
     </div>
    <div class="py-2 px-4 mx-2 lg:px-0 col-span-12 md:col-span-7 lg:col-span-7 md:text-md text-sm">
         <h3 class="text-center mb-5 text-2xl">Login</h3>

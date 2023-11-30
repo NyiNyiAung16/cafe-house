@@ -3,6 +3,8 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CoffeeController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SubscriberController;
 use App\Http\Middleware\AdminMIddleware;
 use App\Http\Middleware\AuthMiddleware;
 use Illuminate\Support\Facades\Route;
@@ -32,6 +34,9 @@ Route::middleware(AuthMiddleware::class)->group(function(){
     Route::get('/coffee/{coffee}/carts',[CartController::class,'store']);
     Route::get('/carts/me',[CartController::class,'show']);
     Route::get('/carts/{coffee}/destroy',[CartController::class,'destroy']);
+    Route::patch('/changeProfileImg',[ProfileController::class,'changeImg']);
+    Route::patch('/changeProfile',[ProfileController::class,'changeProfile']);
+    Route::post('/subscribe',[SubscriberController::class,'store']);
 });
 
 

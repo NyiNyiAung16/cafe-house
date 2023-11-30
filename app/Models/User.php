@@ -41,10 +41,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
-        'isAdmin' => 'boolean'
+        'isAdmin' => 'boolean',
+        'isSubscribe' => 'boolean'
     ];
 
     public function addToCartsCoffee(){
        return $this->belongsToMany(Coffee::class);
+    }
+
+    public function subscribe(){
+        return $this->hasOne(Subscribe::class);
     }
 }

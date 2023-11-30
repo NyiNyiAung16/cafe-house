@@ -91,9 +91,36 @@ setInterval(()=>{
 },3000);
 
 
-// // Start Coffee Lists Section
-
-// window.addEventListener('scroll',handleScroll);
 
 
-// // End Coffee Lists Section
+//Start Profile Section
+const dropdown = document.querySelector('.dropdown');
+const dropdownMenu = document.querySelector('#dropdown-menu');
+
+dropdown.addEventListener('click',function(){
+    if(!dropdownMenu.classList.contains('hidedropdown-menu')){
+        dropdownMenu.classList.toggle('showdropdown-menu');
+    }else{
+        dropdownMenu.classList.remove('hidedropdown-menu');
+        dropdownMenu.classList.toggle('showdropdown-menu');
+    }
+    if(!dropdownMenu.classList.contains('showdropdown-menu')){
+        dropdownMenu.classList.toggle('hidedropdown-menu');
+    }
+});
+
+//change profile img
+const defaultImg = document.querySelector('#defaultProfileImg');
+const img = document.querySelector('.Image');
+const button = document.querySelector('.button');
+const profileBtn = document.querySelector('.profilebtn');
+
+function changeProfileImg(path){
+    button.removeAttribute('disabled');
+   defaultImg.setAttribute('src',path);
+   img.setAttribute('value',path);
+}
+
+function changeProfile(){
+    profileBtn.removeAttribute('disabled');
+}
