@@ -4,7 +4,6 @@
 <x-carousel></x-carousel>
 <x-about-coffee></x-about-coffee>
 <x-coffee-lists></x-coffee-lists>
-{{-- <x-analysis></x-analysis> --}}
 <x-analyse></x-analyse>
 <x-subscriber></x-subscriber>
 <x-contact></x-contact>

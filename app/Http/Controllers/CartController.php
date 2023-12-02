@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Analyse;
 use App\Models\Coffee;
 
 
@@ -10,8 +11,16 @@ class CartController extends Controller
     public function store(Coffee $coffee){
         if(!auth()->user()->addToCartsCoffee->contains('id',$coffee->id)){
             $coffee->addToCartsUser()->attach(auth()->id());
-            $count = $coffee->count;
-            $coffee->update(['count' => ++$count ]);
+            if(!Analyse::where('coffee_name',$coffee->name)->exists()){
+                Analyse::create([
+                    'coffee_name' => $coffee->name,
+                    'count'=> 1
+                ]);
+            }else{
+                $analyse = Analyse::where('coffee_name',$coffee->name)->first();
+                $count = ++$analyse->count;
+                $analyse->update(['count'=>$count]);
+            }
             return back()->with('flashMessage','Add To Carts is successful');
         }
 

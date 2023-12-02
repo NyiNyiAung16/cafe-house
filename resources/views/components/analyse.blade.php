@@ -8,7 +8,7 @@
     <div class="analysis w-[700px] mx-auto mt-10">
         @foreach ($lists as $list)  
         <div class="mb-8">
-            <p>{{$list->name}}</p>
+            <p>{{$list->coffee_name}}</p>
             <div class="progress w-full">
                 <div
                     @class([

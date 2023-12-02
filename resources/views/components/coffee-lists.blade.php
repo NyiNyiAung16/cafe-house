@@ -7,7 +7,7 @@
             <div class="card-body h-full flex flex-col justify-between">
                 <img src="{{ asset('storage/'.$list->image) }}" alt="card1" class="w-full rounded-t object-cover max-h-[200px] h-full">
                 <div class="card-content px-3 py-1">
-                    <h3 class="card-title text-lg">{{$list->name}}</h3>
+                    <h3 class="card-title text-lg capitalize">{{$list->name}}</h3>
                     <p class="card-subtitle text-sm text-orange-500">${{$list->price}}</p>
                     <a href="/coffee/{{$list->id}}/carts" class="text-slate-700 hover:underline duration-200">Add Cart</a>
                 </div>

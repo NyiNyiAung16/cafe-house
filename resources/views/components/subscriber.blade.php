@@ -1,3 +1,7 @@
+@php
+    $isSubscribe = auth()->user()->isSubscribe ?? false;
+@endphp
+
 <div class="subscriberContainer">
     <div class="lg:max-w-3xl mx-auto">
         <div class="mb-5 px-5">
@@ -7,7 +11,7 @@
         <form action="/subscribe" class="subscriberForm" method="POST">
             @csrf
             <div class="form-group">
-                <input type="email"  name="email" class="input" placeholder="{{ auth()->user()->isSubscribe ? 'fill email to unsubscribe' : 'fill email to subscribe' }}">
+                <input type="email"  name="email" class="input" placeholder="{{ $isSubscribe ?? false ? 'fill email to unsubscribe' : 'fill email to subscribe' }}">
                 <label for="email" class="label text-yellow-400">Email</label>
                 @error('email')
                     <p class="text-red-500 text-sm">{{ $message }}</p>
@@ -15,10 +19,10 @@
             </div>
             <button @class([
                 'px-3 py-2 mt-4  duration-150 rounded text-white mx-auto block',
-                'bg-yellow-500 hover:bg-yellow-600' => auth()->user()->isSubscribe,
-                'bg-gray-700 hover:bg-gray-900' => !auth()->user()->isSubscribe
+                'bg-yellow-500 hover:bg-yellow-600' => $isSubscribe,
+                'bg-gray-700 hover:bg-gray-900' => !$isSubscribe
             ])>
-                {{ auth()->user()->isSubscribe ? 'Unscbscribe' : 'Subscribe' }}
+                {{ auth()->user()->isSubscribe ?? false ? 'Unscbscribe' : 'Subscribe' }}
             </button>
         </form>
     </div>

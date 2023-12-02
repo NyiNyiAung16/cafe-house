@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use App\Models\Analyse as ModelsAnalyse;
 use App\Models\Coffee;
 use Closure;
 use Illuminate\Contracts\View\View;
@@ -23,7 +24,7 @@ class analyse extends Component
     public function render(): View|Closure|string
     {
         return view('components.analyse',[
-            'lists' => Coffee::where('count','>',0)->latest()->take(5)->get()
+            'lists' => ModelsAnalyse::where('count','>',0)->latest()->take(5)->get()
         ]);
     }
 }
