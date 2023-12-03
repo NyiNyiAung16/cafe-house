@@ -6,7 +6,8 @@
 <x-coffee-lists></x-coffee-lists>
 <x-analyse></x-analyse>
 <x-subscriber></x-subscriber>
-<x-contact></x-contact>
+<x-copyRight></x-copyRight>
+{{-- <x-contact></x-contact> --}}
 <x-footer></x-footer>
 
 @if (session()->has('flashMessage'))

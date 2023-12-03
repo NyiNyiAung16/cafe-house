@@ -94,9 +94,14 @@ body{
     border-radius: 3px;
 }
 
+.carousel .carousel_inner .carousel_slide .carousel_item p{
+    font-size: 1.4rem;
+}
+
 .carousel .carousel_inner .carousel_button{
     width: 100%;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     position: relative;
     z-index: 5;
@@ -198,10 +203,10 @@ body{
 /* Start Coffee list Section */
 
 .listContainer.scroll{
-    animation: fadeIn 1s linear;
+    animation: listFadeIn 1s linear;
 }
 
-@keyframes fadeIn {
+@keyframes listFadeIn {
     from{
         transform: translateX(-60px);
         opacity: 0;

@@ -24,7 +24,7 @@ class analyse extends Component
     public function render(): View|Closure|string
     {
         return view('components.analyse',[
-            'lists' => ModelsAnalyse::where('count','>',0)->latest()->take(5)->get()
+            'lists' => ModelsAnalyse::orderBy('count','desc')->latest()->take(5)->get()
         ]);
     }
 }

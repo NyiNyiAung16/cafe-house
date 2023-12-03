@@ -1,12 +1,15 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CoffeeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PromotionController;
 use App\Http\Controllers\SubscriberController;
 use App\Http\Middleware\AdminMIddleware;
 use App\Http\Middleware\AuthMiddleware;
+use App\Models\Coffee;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,10 +29,6 @@ Route::get('/',function(){
 
 
 Route::middleware(AuthMiddleware::class)->group(function(){
-    Route::get('/create',function(){
-        return view('create');
-    });
-    Route::post('/addData',[CoffeeController::class,'create']);
     Route::post('/logout',[AuthController::class,'logout']);
     Route::get('/coffee/{coffee}/carts',[CartController::class,'store']);
     Route::get('/carts/me',[CartController::class,'show']);
@@ -37,6 +36,16 @@ Route::middleware(AuthMiddleware::class)->group(function(){
     Route::patch('/changeProfileImg',[ProfileController::class,'changeImg']);
     Route::patch('/changeProfile',[ProfileController::class,'changeProfile']);
     Route::post('/subscribe',[SubscriberController::class,'store']);
+    Route::middleware(AdminMIddleware::class)->group(function(){
+        Route::get('/admin/dashboard',[AdminController::class,'dashboard']);
+        Route::get('/admin/create',[AdminController::class,'create']);
+        Route::get('/admin/promotion/create',[AdminController::class,'createPromotion']);
+        Route::post('/admin/promotion/store',[AdminController::class,'promotionStore']);
+        Route::get('/admin/sortByName',[AdminController::class,'sortByName']);
+        Route::get('/admin/sortByDate',[AdminController::class,'sortByDate']);
+        Route::post('/admin/store',[AdminController::class,'store']);
+    });
+    Route::get('/api/promotions',[PromotionController::class,'get']);
 });
 
 

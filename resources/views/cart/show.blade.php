@@ -1,17 +1,14 @@
 @props(['products'])
 
 <x-head></x-head>
-{{-- <x-navbar></x-navbar> --}}
-{{-- <x-banner></x-banner> --}}
 
-
-<div class="mt-10">
+<div class="pt-10 min-w-screen min-h-screen bg-gray-800">
     <h3 class="text-white text-2xl underline mx-6" style="user-select: none">Cart Products</h3>
     <div class="cartContainer p-6 grid grid-cols-12 gap-3">
         @forelse ($products as $product)    
         <div class="col-span-2 relative w-60 bg-blue-200 border-0 rounded">
             <div class="card-body h-full flex flex-col justify-between">
-                <img src="{{ asset('storage/'.$product->image) }}" alt="card1" class="w-full rounded-t h-full object-cover">
+                <img src="{{ asset('storage/'.$product->image) }}" alt="card1" class="w-full rounded-t h-full object-cover max-h-[200px]">
                 <div class="card-content px-3 py-1">
                     <h3 class="text-lg capitalize">{{$product->name}}</h3>
                     <p class="text-sm text-orange-600">${{ $product->price }}</p>

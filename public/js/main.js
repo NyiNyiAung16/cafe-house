@@ -3,11 +3,12 @@ const coffeeListContainer = document.querySelector('.listContainer');
 
 function handleScroll(){
     if(this.scrollY >= '210'){
-        navbar.classList.add('scrollNav')
-        coffeeListContainer.classList.add('scroll')
+        navbar.classList.add('scrollNav');
     }else{
-        navbar.classList.remove('scrollNav')
-        // coffeeListContainer.classList.remove('scroll')
+        navbar.classList.remove('scrollNav');
+    }
+    if(this.scrollY >= 580){
+        coffeeListContainer.classList.add('scroll');
     }
 }
 
@@ -36,12 +37,11 @@ function handleSlide(direction){
 function processImages(data){
     return `<div class="carousel_item">
                 <p class="text-2xl">${data.content}</p>
-                <img src="${data.url}" alt="${data.alt}" width="200">
+                <img src="storage/${data.image}" alt="promotionimg" width="100">
             </div>`;
 }
-
 async function fetchData(){
-    await fetch('json/carousel.json')
+    await fetch('/api/promotions')
     .then((res)=>{
         if(!res.ok){
             throw new Error('Network response is not okay.')
@@ -88,7 +88,7 @@ carouselSlide.addEventListener('transitionend',()=>{
 setInterval(()=>{
     if(isMoving) return;
     handleSlide('right');
-},3000);
+},5000);
 
 
 
@@ -124,3 +124,8 @@ function changeProfileImg(path){
 function changeProfile(){
     profileBtn.removeAttribute('disabled');
 }
+
+// dynamic Date for copyright section
+const date = document.querySelector('.dynamicDate');
+const dynamicDate = new Date().getUTCFullYear();
+date.textContent = dynamicDate;
