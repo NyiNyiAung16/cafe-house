@@ -1,4 +1,4 @@
-<div class="grid grid-cols-12 bg-gray-700 text-white px-3 py-5">
+<div class="grid grid-cols-12 bg-gray-700 text-white px-3 py-5" id="detail">
     <div class="col-span-1"></div>
     <div class="col-span-6 flex flex-col items-center justify-center">
         <div>

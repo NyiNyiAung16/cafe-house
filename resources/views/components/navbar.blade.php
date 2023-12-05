@@ -2,8 +2,8 @@
     <div class="flex gap-4 items-center text-slate-300">
         <h3 class="text-2xl text-white font-medium">Coffee-Shop</h3>
         <a href="/" class="hover:text-slate-50 duration-150">Home</a>
-        <a href="#" class="hover:text-slate-50 duration-150">About</a>
-        <a href="#contact" class="hover:text-slate-50 duration-150">Contact</a>
+        <a href="/about" class="hover:text-slate-50 duration-150">About</a>
+        <a href="/contact" class="hover:text-slate-50 duration-150">Contact</a>
         <a href="/carts/me" class="hover:text-slate-50 duration-150">Carts <i class="fa-solid fa-cart-shopping text-sm"></i></i></a>
     </div>
     @if (!auth()->user())    

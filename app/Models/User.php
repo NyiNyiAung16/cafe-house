@@ -52,4 +52,8 @@ class User extends Authenticatable
     public function subscribe(){
         return $this->hasOne(Subscribe::class);
     }
+
+    public function reviews(){
+        return $this->hasMany(Review::class);
+    }
 }

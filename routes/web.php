@@ -6,10 +6,12 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\CoffeeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PromotionController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\SubscriberController;
 use App\Http\Middleware\AdminMIddleware;
 use App\Http\Middleware\AuthMiddleware;
 use App\Models\Coffee;
+use App\Models\Review;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,9 +25,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',function(){
-    return view('welcome');
+Route::get('/',function(){return view('welcome');});
+Route::get('/about',
+    function(){ return view('about',[
+        'posts' => Review::latest()->get()
+    ]);
 });
+Route::get('/contact',function(){ return view('contact'); });
 
 
 Route::middleware(AuthMiddleware::class)->group(function(){
@@ -46,6 +52,8 @@ Route::middleware(AuthMiddleware::class)->group(function(){
         Route::post('/admin/store',[AdminController::class,'store']);
     });
     Route::get('/api/promotions',[PromotionController::class,'get']);
+    Route::post('/review/store',[ReviewController::class,'store']);
+    Route::delete('/review/destroy/{review}',[ReviewController::class,'destroy']);
 });
 
 

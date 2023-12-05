@@ -7,7 +7,6 @@
 <x-analyse></x-analyse>
 <x-subscriber></x-subscriber>
 <x-copyRight></x-copyRight>
-{{-- <x-contact></x-contact> --}}
 <x-footer></x-footer>
 
 @if (session()->has('flashMessage'))
