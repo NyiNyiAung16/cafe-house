@@ -1,4 +1,7 @@
-<div class="lg:max-w-xl mx-auto mt-7">
+{{-- <div class=" text-center">
+    <button class=" inline-block px-3 py-2 bg-gray-700 rounded hover:bg-gray-600 duration-200" id="showReviewForm">WriteReviews</button>
+</div> --}}
+<div class="lg:max-w-xl mx-auto mt-7" id="reviewForm">
     <form action="/review/store" method="POST">
         @csrf
         <label for="review">Review</label>

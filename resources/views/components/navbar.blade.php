@@ -1,10 +1,13 @@
 <section class="navSection flex justify-between items-center shadow-sm fixed top-0 z-10 w-screen">
     <div class="flex gap-4 items-center text-slate-300">
-        <h3 class="text-2xl text-white font-medium">Coffee-Shop</h3>
+        <h3 class="text-2xl text-white font-medium">Cafe House</h3>
         <a href="/" class="hover:text-slate-50 duration-150">Home</a>
         <a href="/about" class="hover:text-slate-50 duration-150">About</a>
         <a href="/contact" class="hover:text-slate-50 duration-150">Contact</a>
         <a href="/carts/me" class="hover:text-slate-50 duration-150">Carts <i class="fa-solid fa-cart-shopping text-sm"></i></i></a>
+        @if (auth()->user()->isAdmin ?? false)
+            <a href="{{route('dashboard')}}" class="hover:text-slate-50 duration-150">Dashboard</a>
+        @endif
     </div>
     @if (!auth()->user())    
         <div class="navRight flex gap-2 items-center text-slate-50 hover:text-blue-400 duration-150">

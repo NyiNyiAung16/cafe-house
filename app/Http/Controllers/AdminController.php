@@ -12,18 +12,23 @@ use Illuminate\Support\Facades\Mail;
 class AdminController extends Controller
 {
     public function dashboard(){
+        $search = request('search');
         return view('admin.dashboard',[
-            'products' => Coffee::all(),
+            'products' => Coffee::where('name','Like','%'.$search.'%')->get(),
             'user' => auth()->user()
         ]);
     }
 
     public function create(){
-        return view('admin.create');
+        return view('admin.create',[
+            'user' => auth()->user()
+        ]);
     }
 
     public function createPromotion(){
-        return view('admin.createPromotion');
+        return view('admin.createPromotion',[
+            'user' => auth()->user()
+        ]);
     }
 
     public function store(Request $request){

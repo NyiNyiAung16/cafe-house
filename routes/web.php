@@ -26,6 +26,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/',function(){return view('welcome');});
+Route::get('/api/promotions',[PromotionController::class,'get']);
 Route::get('/about',
     function(){ return view('about',[
         'posts' => Review::latest()->get()
@@ -43,7 +44,8 @@ Route::middleware(AuthMiddleware::class)->group(function(){
     Route::patch('/changeProfile',[ProfileController::class,'changeProfile']);
     Route::post('/subscribe',[SubscriberController::class,'store']);
     Route::middleware(AdminMIddleware::class)->group(function(){
-        Route::get('/admin/dashboard',[AdminController::class,'dashboard']);
+        Route::get('/admin',fn()=> redirect(route('dashboard')) );
+        Route::get('/admin/dashboard',[AdminController::class,'dashboard'])->name('dashboard');
         Route::get('/admin/create',[AdminController::class,'create']);
         Route::get('/admin/promotion/create',[AdminController::class,'createPromotion']);
         Route::post('/admin/promotion/store',[AdminController::class,'promotionStore']);
@@ -51,7 +53,6 @@ Route::middleware(AuthMiddleware::class)->group(function(){
         Route::get('/admin/sortByDate',[AdminController::class,'sortByDate']);
         Route::post('/admin/store',[AdminController::class,'store']);
     });
-    Route::get('/api/promotions',[PromotionController::class,'get']);
     Route::post('/review/store',[ReviewController::class,'store']);
     Route::delete('/review/destroy/{review}',[ReviewController::class,'destroy']);
 });
